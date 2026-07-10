@@ -116,8 +116,8 @@ A backend system where users log in using mobile number + OTP. After login, user
    ```
 
 7. **Access the API:**
-   - Base URL: `http://localhost:5000`
-   - Swagger Docs: `http://localhost:5000/api-docs`
+   - Base URL: `http://localhost:3000`
+   - Swagger Docs: `http://localhost:3000/api-docs`
 
 
 
@@ -125,14 +125,14 @@ A backend system where users log in using mobile number + OTP. After login, user
 
 | Variable | Description | Default |
 |----------|-------------|---------|
-| PORT | Server port | 5000 |
+| PORT | Server port | 3000 |
 | NODE_ENV | Environment | development |
 | MONGODB_URI | MongoDB connection string | mongodb://localhost:27017/rbac_otp_db |
 | JWT_SECRET | JWT signing secret | - |
 | JWT_EXPIRES_IN | Access token expiry | 15m |
 | JWT_REFRESH_SECRET | Refresh token secret | - |
 | JWT_REFRESH_EXPIRES_IN | Refresh token expiry | 7d |
-| OTP_EXPIRY_MINUTES | OTP validity period | 5 |
+| OTP_EXPIRY_MINUTES | OTP validity period | 1 |
 
 ## API Documentation
 
@@ -294,7 +294,7 @@ Refresh access token.
 ## Validation Rules
 
 - **Mobile number:** Required, exactly 10 digits, numbers only
-- **OTP:** Required, 6 digits, expires in 5 minutes (configurable), one-time use, max 3 wrong attempts
+- **OTP:** Required, 6 digits, expires in 1 minute (configurable), one-time use, max 3 wrong attempts
 - **Roles:** SUPER_ADMIN, ADMIN, MANAGER, USER
 - **Inactive users:** Cannot log in
 - **JWT:** Required for all protected APIs
